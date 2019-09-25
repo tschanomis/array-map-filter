@@ -22,7 +22,11 @@ En sortie: [
  */
 
 function getStringsLength(strings) {
-}
+  const def = strings.map(function(ingredient){
+    return ingredient + " contains " + ingredient.length + " characters";
+  });
+  return def;
+};
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node map/ex1
