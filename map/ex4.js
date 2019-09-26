@@ -52,6 +52,17 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 */
 
 function getCirclesProperties(radiuses) {
+  function min(x) {
+    return Number.parseFloat(x).toFixed(3);
+  }
+  const info = radiuses.map(radiusSize => {
+    const circle = {};
+    circle.radius = radiusSize;
+    circle.circumference = min(2 * Math.PI * radiusSize);
+    circle.surface = min(Math.PI * radiusSize * radiusSize);
+    return circle;
+  });
+  return info;
 }
 
 
