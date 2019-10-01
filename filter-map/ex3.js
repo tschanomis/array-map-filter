@@ -56,16 +56,14 @@ function getStudentsPerCurriculum(campuses, curriculumName) {
       return campus.curriculums[i].name.includes(curriculumName);
       }
     });
-  const mapper = filter.map((campus) => {
+  const result = filter.map((campus) => {
     for (let i = 0; i < campus.curriculums.length ;i++) {
       const obj = {};
-      const key = campus.city;
-      const students = campus.curriculums[i].numStudents;
-      obj[key] = students;
+      obj[campus.city] = campus.curriculums[i].numStudents;
       return obj;  
       }
   });
-  return mapper;
+  return result;
 } 
 
 
